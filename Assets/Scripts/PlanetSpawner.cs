@@ -5,17 +5,32 @@ using UnityEngine;
 public class PlanetSpawner : MonoBehaviour
 {
     public GameObject prefab;
+    
     GameObject planet;
+    GameObject jsonParser;
+    JSONParser jsonParserScript;
+
+    string planetName;
     float distance;
     float speedTrans;
     Vector3 offset;
-    Vector3 rotation; 
+    Vector3 rotation;
 
+    void Awake()
+    {
+        //PlanetItem planetItem = jsonparser.GetTextItem(planetName);
+        //jsonParser = new JSONParser("planets");
+        jsonParser = GameObject.Find("JSONParser");
+        jsonParserScript = jsonParser.GetComponent<JSONParser>();
+
+    }
     // Start is called before the first frame update
     void Start()
     {
-        distance = 15f;
-        speedTrans = 10f;
+        planetName = prefab.transform.name;
+
+        distance = jsonParserScript.GetTextItem(planetName).Distance;
+        speedTrans = jsonParserScript.GetTextItem(planetName).Translation;
         offset = new Vector3(distance, 0, 0);
         rotation = new Vector3(0, speedTrans, 0);
         planet = Instantiate(prefab, transform.position + offset, Quaternion.identity);

@@ -5,20 +5,36 @@ using Vuforia;
 
 public class Planet : MonoBehaviour
 {
-    float speedRot;
+    GameObject jsonParser;
+    JSONParser jsonParserScript;
 
+    string planetName;
+
+    float speedRot;
     Vector3 rotation;
+    float size;
     Vector3 minScale = new Vector3(0, 0, 0);
     Vector3 maxScale = new Vector3(5, 5, 5);
     float t;
     float scalingSpeed = 1f;
     float scalingDuration = 1f;
 
+    void Awake()
+    {
+        jsonParser = GameObject.Find("JSONParser");
+        jsonParserScript = jsonParser.GetComponent<JSONParser>();
+
+    }
     // Start is called before the first frame update
     void Start()
     {
-        speedRot = 40f;
+        planetName = transform.name;
+
+        speedRot = jsonParserScript.GetTextItem(planetName).Rotation;
         rotation = new Vector3(0, speedRot, 0);
+
+        size = jsonParserScript.GetTextItem(planetName).Size;
+        maxScale = new Vector3(size, size, size);
         Animation();        
     }
 

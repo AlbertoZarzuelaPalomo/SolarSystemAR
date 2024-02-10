@@ -1,0 +1,68 @@
+{
+	"Items": [
+		{
+			"Key": "Mercury",
+			"Distance": 1,
+			"Size": 1,
+			"Translation": 1,
+			"Rotation": 1
+		},
+		{
+			"Key": "Venus",
+			"Distance": 2,
+			"Size": 2,
+			"Translation": 2,
+			"Rotation": 2
+		},
+		{
+			"Key": "Earth",
+			"Distance": 3,
+			"Size": 3,
+			"Translation": 3,
+			"Rotation": 3
+		},
+		{
+			"Key": "Mars",
+			"Distance": 4,
+			"Size": 1,
+			"Translation": 3,
+			"Rotation": 3
+		},
+		{
+			"Key": "Jupiter",
+			"Distance": 5,
+			"Size": 1,
+			"Translation": 3,
+			"Rotation": 3
+		},
+		{
+			"Key": "Saturn",
+			"Distance": 6,
+			"Size": 1,
+			"Translation": 3,
+			"Rotation": 3
+		},
+		{
+			"Key": "Uranus",
+			"Distance": 7,
+			"Size": 1,
+			"Translation": 3,
+			"Rotation": 3
+		},
+		{
+			"Key": "Neptune",
+			"Distance": 8,
+			"Size": 1,
+			"Translation": 3,
+			"Rotation": 3
+		},
+		{
+			"Key": "Pluto",
+			"Distance": 9,
+			"Size": 1,
+			"Translation": 3,
+			"Rotation": 3
+		}
+		
+	]
+}
