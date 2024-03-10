@@ -5018,8 +5018,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1901559596380486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4039965777609342}
@@ -5052,7 +5052,7 @@ LODGroup:
     renderers:
     - renderer: {fileID: 23360761938156044}
     - renderer: {fileID: 199697089879741776}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!135 &4197536903836104266
 SphereCollider:
   m_ObjectHideFlags: 0

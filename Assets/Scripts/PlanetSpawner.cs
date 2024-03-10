@@ -7,8 +7,10 @@ public class PlanetSpawner : MonoBehaviour
     public GameObject prefab;
     
     GameObject planet;
-    GameObject jsonParser;
-    JSONParser jsonParserScript;
+  
+    JSONParser jsonParser;
+
+    GameObject canvas;
 
     string planetName;
     float distance;
@@ -17,11 +19,9 @@ public class PlanetSpawner : MonoBehaviour
     Vector3 rotation;
 
     void Awake()
-    {
-        //PlanetItem planetItem = jsonparser.GetTextItem(planetName);
-        //jsonParser = new JSONParser("planets");
-        jsonParser = GameObject.Find("JSONParser");
-        jsonParserScript = jsonParser.GetComponent<JSONParser>();
+    {        
+        jsonParser = new JSONParser("planets");
+        canvas = GameObject.FindGameObjectWithTag("Canvas");        
 
     }
     // Start is called before the first frame update
@@ -29,17 +29,23 @@ public class PlanetSpawner : MonoBehaviour
     {
         planetName = prefab.transform.name;
 
-        distance = jsonParserScript.GetTextItem(planetName).Distance;
-        speedTrans = jsonParserScript.GetTextItem(planetName).Translation;
+        distance = jsonParser.GetTextItem(planetName).Distance;
+        speedTrans = jsonParser.GetTextItem(planetName).Translation;
         offset = new Vector3(distance, 0, 0);
         rotation = new Vector3(0, speedTrans, 0);
-        planet = Instantiate(prefab, transform.position + offset, Quaternion.identity);
+        planet = Instantiate(prefab, transform.position + offset, transform.rotation);
+        planet.name = prefab.name;
         planet.transform.parent = this.transform;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(rotation * Time.deltaTime);
+        if (canvas.GetComponent<SceneManagerScript>().timer == true)
+        {
+            transform.Rotate(rotation * Time.deltaTime);
+        }
+        
     }
 }

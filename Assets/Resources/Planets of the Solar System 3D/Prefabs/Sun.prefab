@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1229251971759408710}
   - component: {fileID: 7400510438367465617}
-  - component: {fileID: -2996790314281471580}
+  - component: {fileID: 7410186662045600900}
   m_Layer: 0
   m_Name: Sun
   m_TagString: Actors
@@ -50,7 +50,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-2996790314281471580
+--- !u!114 &7410186662045600900
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3548356298615962880}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7efd0cd4b293ad54b9753d4aebbe77a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 654a6b47ef60b45489e92ebd7e27d4a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3874492676428625441

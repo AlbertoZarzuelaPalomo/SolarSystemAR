@@ -4919,7 +4919,6 @@ GameObject:
   - component: {fileID: 205568318585521926}
   - component: {fileID: 4878998461253096602}
   - component: {fileID: 5227404394036247139}
-  - component: {fileID: 324039203337184715}
   m_Layer: 0
   m_Name: Earth
   m_TagString: TrackingObject
@@ -4935,9 +4934,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733945558841920}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4517316721654034}
   - {fileID: 4921127262728976}
@@ -4969,7 +4968,7 @@ LODGroup:
     renderers:
     - renderer: {fileID: 23090388759196626}
     - renderer: {fileID: 199987257424377576}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!135 &4878998461253096602
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4995,19 +4994,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7efd0cd4b293ad54b9753d4aebbe77a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &324039203337184715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1733945558841920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fcb6c99947ad5a4d89166dde3e402ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 1408581670749804, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
 --- !u!1 &1982611864615202
 GameObject:
   m_ObjectHideFlags: 0

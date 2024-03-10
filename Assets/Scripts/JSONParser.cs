@@ -4,14 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class JSONParser : MonoBehaviour
+public class JSONParser
 {
     private DataResources jsonData;
     public JSONParser(string filename)
     {
-
         TextAsset json = Resources.Load<TextAsset>(filename);
-
         this.jsonData = JsonUtility.FromJson<DataResources>(json.ToString());
     }
     public PlanetItem GetTextItem(string key)
@@ -35,6 +33,7 @@ public class PlanetItem
     public float Size;
     public float Translation;
     public float Rotation;
+    public string Info;
 }
 
 

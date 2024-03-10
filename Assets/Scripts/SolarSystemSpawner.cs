@@ -4,30 +4,37 @@ using UnityEngine;
 using Vuforia;
 
 public class SolarSystemSpawner : DefaultObserverEventHandler
-{
-    public GameObject solarSystemPrefab;
+{   
+    public GameObject solarSystem;
+    public GameObject scanText;
+    public GameObject touchText;
 
-    GameObject solarSystem;
+    bool adviceGiven = false;
 
     protected override void OnTrackingFound()
-    {
-        Debug.Log("Target Found");
+    {        
+        scanText.SetActive(false);
+        transform.GetChild(0).gameObject.SetActive(true);
 
-        // Instantiate the model prefab only if it hasn't been instantiated yet
-        if (solarSystem == null)
-            InstantiatePrefab();
+        if (adviceGiven == false)
+        {
+            StartCoroutine(TouchAdvice());
+        }        
 
         base.OnTrackingFound();
     }
 
-    void InstantiatePrefab()
+    IEnumerator TouchAdvice()
     {
-        if (solarSystemPrefab != null)
-        {
-            Debug.Log("Target found, adding content");
-            solarSystem = Instantiate(solarSystemPrefab, mObserverBehaviour.transform);
-            //mMyModelObject.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-            solarSystem.SetActive(true);
-        }
+        adviceGiven = true;
+
+        yield return new WaitForSeconds(3);
+
+        touchText.SetActive(true);
+
+        yield return new WaitForSeconds(4);
+
+        touchText.SetActive(false);
+
     }
 }

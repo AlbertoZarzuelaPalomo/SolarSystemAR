@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagerScript : MonoBehaviour
 {
+    public bool timer = true;
     public void LoadScene (string sceneName)
     {
         SceneManager.LoadScene(sceneName);
@@ -12,8 +13,11 @@ public class SceneManagerScript : MonoBehaviour
 
     public void ExitApp()
     {
-        Application.Quit();
+        Application.Quit();        
+    }
 
-        Debug.Log("App cerrada");
+    public void Pause()
+    {
+        timer = !timer;
     }
 }
